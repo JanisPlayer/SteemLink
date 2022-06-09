@@ -1,0 +1,70 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style type="text/css">
+      body {
+        margin: 50px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+   -->
+  <script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
+	<script src="steemconnect.min.js"></script>
+	<script src="steemconnect-widget.js"></script>
+	<script src="popup.js"></script>
+
+
+  </head>
+  <p id="login_text"></p>
+  <body>
+  Username: <input type="text" name="username" id="username_text">
+  <p></p>
+  Password: <input type="password" id="password_text" value="12345678910">
+  <p></p>
+	<!--<button type ="submit" align="center" style="width:300px" id ="button">Submit</button>-->
+  <button id="login_button">Login</button>
+  <input type="checkbox" name="vehicle" value="Bike"> Save password in Chrome Storage ?<br>
+  <p></p>
+  <button id="Vote">Vote Now</button>
+  <button id="Vote_Reload">Vote Reload</button>
+  <p id="titel"></p>   <input type="checkbox" name="vehicle" value="Show on website"> Show on website<br>
+  <p id="votes"></p>   <input type="checkbox" name="vehicle" value="Show on website"> Show on website<br>
+  <p id="views"></p>   <input type="checkbox" name="vehicle" value="Show on website"> Show on website<br>
+	<p id="comments"></p>   <input type="checkbox" name="vehicle" value="Show on website"> Show on website<br>
+
+    <h1>Vote Power Changer</h1>
+
+    <div id="container">
+      <span>Vote Power</span>
+      <select id="dropdown">
+        <option selected disabled hidden value=''></option>
+        <option value="100">100%</option>
+        <option value="75">75%</option>
+        <option value="50">50%</option>
+        <option value="25">25%</option>
+      </select>
+    </div>
+  </body>
+</html>
